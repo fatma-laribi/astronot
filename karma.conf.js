@@ -34,6 +34,11 @@ module.exports = function (config) {
     },
     reporters: ['progress', 'kjhtml'],
     browsers: ['ChromeHeadless'],
+    customLaunchers: {
+      ChromeHeadless: {
+        flags: ['--headless', '--disable-gpu', '--no-sandbox', '--disable-software-rasterizer']
+      }},
+    
     restartOnFileChange: true,
     singleRun: true
   });
