@@ -33,10 +33,12 @@ module.exports = function (config) {
       ]
     },
     reporters: ['progress', 'kjhtml'],
-    customLaunchers: {
-      ChromeHeadless: {
-        flags: ['--headless', '--disable-gpu', '--no-sandbox', '--disable-software-rasterizer']
-      }},
+    browsers: ['ChromeHeadlessNoSandbox'],
+customLaunchers: {
+  ChromeHeadlessNoSandbox: {
+    base: 'ChromeHeadless',
+    flags: ['--no-sandbox']
+  }},
     
     restartOnFileChange: true,
     singleRun: true
