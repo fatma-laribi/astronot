@@ -24,11 +24,6 @@ module.exports = function (config) {
     jasmineHtmlReporter: {
       suppressAll: true // removes the duplicated traces
     },
-    junitReporter: {
-      outputDir: 'test-reports', // specify the output directory for JUnit XML reports
-      outputFile: 'test-results.xml', // specify the name of the JUnit XML file
-      useBrowserName: false, // add browser name to report and classes names
-    },
     coverageReporter: {
       dir: require('path').join(__dirname, './coverage/astronot-angular'),
       subdir: '.',
