@@ -10,7 +10,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "e2e": "ng e2e",
-    "qa-test": "ng test --watch=false --progress=false --browsers=ChromeHeadless --code-coverage --source-map=false"
+    "qa-test": "ng test --watch=false --progress=false --browsers=ChromeHeadlessNoSandbox --code-coverage --source-map=false"
+
   },
   "private": true,
   "dependencies": {
