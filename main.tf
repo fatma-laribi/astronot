@@ -35,23 +35,6 @@ resource "azurerm_container_group" "example" {
       port     = 9090
       protocol = "TCP"
     }
-
-    // Provisioner to dynamically generate Prometheus configuration
-    provisioner "local-exec" {
-      command = <<EOT
-cat <<EOF > /tmp/prometheus.yml
-global:
-  scrape_interval: 15s
-  evaluation_interval: 15s
-
-scrape_configs:
-  - job_name: 'example-app'
-    static_configs:
-      - targets: ['localhost:80']
-EOF
-docker cp /tmp/prometheus.yml aci-example-container-group:/etc/prometheus/prometheus.yml
-EOT
-    }
   }
 
   container {
