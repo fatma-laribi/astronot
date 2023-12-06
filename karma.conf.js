@@ -32,19 +32,19 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
-    reporters: ['progress', 'kjhtml'], 'junit',
+    reporters: ['progress', 'kjhtml', 'junit'], // Fix the syntax here
     junitReporter: {
       outputDir: 'test-reports', // specify the output directory for JUnit XML reports
       outputFile: 'test-results.xml', // specify the name of the JUnit XML file
-      useBrowserName: false, // add browser name to report and classes names
+      useBrowserName: false // add browser name to report and classes names
     },
     browsers: ['ChromeHeadlessNoSandbox'],
-customLaunchers: {
-  ChromeHeadlessNoSandbox: {
-    base: 'ChromeHeadless',
-    flags: ['--no-sandbox']
-  }},
-    
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox']
+      }
+    },
     restartOnFileChange: true,
     singleRun: true
   });
