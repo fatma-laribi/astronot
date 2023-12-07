@@ -35,6 +35,13 @@ resource "azurerm_container_group" "example" {
       port     = 9090
       protocol = "TCP"
     }
+    command = [
+        "--config.file=/etc/prometheus/prometheus.yml",
+      ]
+
+    volume {
+      name = "prometheus-config"
+      mount_path = "/etc/prometheus/"
   }
 
   container {
