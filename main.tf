@@ -43,7 +43,7 @@ resource "azurerm_container_group" "example" {
       name = "prometheus-config"
       mount_path = "/etc/prometheus/"
   }
-
+}
   container {
     name   = "grafana-container"
     image  = "grafana/grafana:latest"
