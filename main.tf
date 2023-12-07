@@ -2,6 +2,11 @@ provider "azurerm" {
   features {}
 }
 
+variable "environment" {
+  description = "The environment to deploy (dev, test, staging, prod)"
+  type        = string
+}
+
 resource "azurerm_resource_group" "example" {
   name     = "aci-example-rg"
   location = "East US"
@@ -57,7 +62,7 @@ resource "azurerm_container_group" "example" {
   }
 
   tags = {
-    environment = "testing"
+    environment = var.environment
   }
 }
 
